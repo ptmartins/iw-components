@@ -8,6 +8,7 @@ export class iwAvatar extends HTMLElement {
     }
 
     connectedCallback() {
+        const component = this.shadowRoot.querySelector('.avatar');
         const styles = document.createElement('style');
         styles.textContent = `
             .avatar {
@@ -63,44 +64,45 @@ export class iwAvatar extends HTMLElement {
         this.image = this.getAttribute('image') || null;
         this.size = this.getAttribute('size') || 'medium';
         this.alt = this.getAttribute('alt') || 'Avatar';
-        this.tooltip = this.getAttribute('tooltip') || null;
+        this.tooltip = this.getAttribute('tooltip') || 'Avatar';
 
         switch(this.size) {
             case 'xsmall':
-                this.shadowRoot.querySelector('.avatar').classList.add(this.size);
+                component.classList.add(this.size);
                 break;
             case 'small':
-                this.shadowRoot.querySelector('.avatar').classList.add(this.size);
+                component.classList.add(this.size);
                 break;
             case 'medium':
-                this.shadowRoot.querySelector('.avatar').classList.add(this.size);
+                component.classList.add(this.size);
                 break;
             case 'large':
-                this.shadowRoot.querySelector('.avatar').classList.add(this.size);
+                component.classList.add(this.size);
                 break;
             case 'xlarge':
-                this.shadowRoot.querySelector('.avatar').classList.add(this.size);
+                component.classList.add(this.size);
                 break;
             default:
-                this.shadowRoot.querySelector('.avatar').classList.add('medium');
+                component.classList.add('medium');
                 break;
         }
 
         if(this.name) {
-            this.shadowRoot.querySelector('.avatar').textContent = this.name;
+            component.textContent = this.name;
         }
 
         if(this.image) {
             let image = document.createElement('IMG');
             image.src = this.image;
             if(this.name) {
-                this.shadowRoot.querySelector('.avatar').textContent = '';
+                component.textContent = '';
             }
-            this.shadowRoot.querySelector('.avatar').appendChild(image);
+            component.appendChild(image);
         }
 
+        component.setAttribute('alt', this.alt);
+        component.setAttribute('title', this.tooltip);   // Replace with iw_tool_tip_link class and data attribute
+        
         this.shadowRoot.appendChild(styles);
     }
 }
-
-customElements.define('iw-avatar', iwAvatar);
