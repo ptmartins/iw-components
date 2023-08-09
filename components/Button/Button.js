@@ -55,6 +55,7 @@ export class iwButton extends HTMLElement {
         `;
 
         this.type = this.getAttribute('type') || 'default';
+        this.onClick = this.getAttribute('onClick') || null;
 
         switch(this.type) {
             case 'main':
@@ -71,6 +72,10 @@ export class iwButton extends HTMLElement {
                 break;
             default:
                 break;
+        }
+
+        if(this.onClick) {
+            component.addEventListener('click', ev => console.log(this.onClick));
         }
 
         this.shadowRoot.appendChild(styles);
