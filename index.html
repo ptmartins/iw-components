@@ -4,9 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="global.css">
 </head>
 <body>
+    <script>
+        const handleClick = () => {
+            alert('Button was clicked!');
+        }
+    </script>
     <h1 class="title">IW Components</h1>
 
     <!-- Avatars -->
@@ -33,10 +39,18 @@
         <h3 class="section__title">Buttons</h3>
         <div class="section__components">
             <iw-button>Click me</iw-button> 
-            <iw-button type="main">Main</iw-button>   
+            <iw-button type="main" onClick="handleClick()">Main</iw-button>   
             <iw-button type="kill">Cancel</iw-button>   
             <iw-button type="mini">Mini</iw-button>   
             <iw-button type="disabled">Disabled</iw-button>   
+        </div>
+    </section>
+
+    <!-- Alerts -->
+    <section class="section section--alert">
+        <h3 class="section__title">Alerts</h3>
+        <div class="section__components">
+            <iw-alert>No results found</iw-alert>
         </div>
     </section>
 

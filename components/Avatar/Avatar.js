@@ -3,7 +3,9 @@ export class iwAvatar extends HTMLElement {
         super();
 
         const template = document.createElement('TEMPLATE');
-        template.innerHTML = `<div class="avatar"></div>`;
+        template.innerHTML = `
+            <div class="avatar"></div>
+        `;
         this.attachShadow({ mode: 'open' }).appendChild(template.content.cloneNode(true));
     }
 
