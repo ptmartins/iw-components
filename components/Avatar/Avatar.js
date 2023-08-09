@@ -1,6 +1,4 @@
 export class iwAvatar extends HTMLElement {
-    static ID = 0;
-
     constructor(){
         super();
 
@@ -19,6 +17,13 @@ export class iwAvatar extends HTMLElement {
                 color: #fff;
                 display: flex;
                 justify-content: center;
+                overflow: hidden;
+            }
+
+            .avatar img {
+                height: 100%;
+                object-fit: cover;
+                width: 100%;
             }
 
             .xsmall {
@@ -83,6 +88,15 @@ export class iwAvatar extends HTMLElement {
 
         if(this.name) {
             this.shadowRoot.querySelector('.avatar').textContent = this.name;
+        }
+
+        if(this.image) {
+            let image = document.createElement('IMG');
+            image.src = this.image;
+            if(this.name) {
+                this.shadowRoot.querySelector('.avatar').textContent = '';
+            }
+            this.shadowRoot.querySelector('.avatar').appendChild(image);
         }
 
         this.shadowRoot.appendChild(styles);
