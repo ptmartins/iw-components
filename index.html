@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/f06b9644e1.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="global.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
             alert('Button was clicked!');
         }
     </script>
-    <h1 class="title">IW Components</h1>
+    <h1 class="title">IW Components <i class="fa-solid fa-triangle-exclamation"></i></h1>
 
     <!-- Avatars -->
     <section class="section section--avatar">
@@ -50,7 +50,13 @@
     <section class="section section--alert">
         <h3 class="section__title">Alerts</h3>
         <div class="section__components">
-            <iw-alert>No results found</iw-alert>
+            <iw-alert type="info">
+                <i part="icon"></i>
+                Why do programmers prefer using dark mode? Because light attracts bugs!
+            </iw-alert>
+            <iw-alert type="error">"Oops, Something Went Wrong! It seems like there's a glitch in the matrix!</iw-alert>
+            <iw-alert type="success">Migration complete! Pat yourself on the back for this tech triumph!</iw-alert>
+            <iw-alert type="warning">System Alert! A storm may be brewing in the digital realm. </iw-alert>
         </div>
     </section>
 

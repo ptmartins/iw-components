@@ -19,7 +19,7 @@ body {
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
     line-height: 1.5;
-    padding: 1.5rem;
+    padding: 3rem;
 }
 
 .title {
@@ -28,17 +28,20 @@ body {
 }
 
 .section {
-    padding: 1.5rem;
+    padding: 1.5rem 0;
 }
 
 .section__title {
+    border-bottom: 1px solid var(--font-color);
     margin-bottom: 1.5rem;
+    padding-bottom: .75rem;
     text-transform: uppercase;
 }
 
 .section__components {
     align-items: center;
     display: flex;
+    flex-wrap: wrap;
     gap: .75rem;
     margin-bottom: 1.5rem;
 }
